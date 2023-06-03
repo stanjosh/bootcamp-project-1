@@ -12,24 +12,28 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Knowledge</title>
+    <title>Rock Paper Scissors</title>
   </head>
   <body>
     <div class="container main">
-      <section class="section">
         <div class="card advice">
           <div class="card-content bgimg">
             <table id="apiTable"></table>
           </div>
           <footer class="card-footer">
-            <p class="card-footer-item">
-              <button class="button is-dark" id="newStuff">
-                Get another one.
+            <p class="card-footer-item" id="playerButtons">
+              <button class="button is-dark" id="rockButton" data-move="rock">
+                rock
+              </button>
+              <button class="button is-dark" id="paperButton" data-move="paper">
+                paper
+              </button>
+              <button class="button is-dark" id="scissorsButton" data-move="scissors">
+                rock
               </button>
             </p>
           </footer>
         </div>
-      </section>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
