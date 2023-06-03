@@ -1,4 +1,3 @@
-
 async function rpsRequest(playerMove) {
     return {
         async: true,
@@ -12,6 +11,16 @@ async function rpsRequest(playerMove) {
     }
 };
 
+function chooseOpp() {
+
+}
+
+function matchmaking() {
+    let robot = randomRobot().join(' ')
+    var url = `https://robohash.org/${robot}`
+    $('#cpuImage').attr('src', url)
+    $('#cpuName').text(robot)
+}
   
 $('#playerButtons').on('click', async (event) => {
     settings = await rpsRequest($(event.target).data('move'))
