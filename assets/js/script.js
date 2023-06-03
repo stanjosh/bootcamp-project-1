@@ -51,7 +51,6 @@ function drawGameState() {
         $.each(gameStateElements, (elem) => {
             $(gameStateElements[elem]).addClass('hidden') //then hide them all
         })
-
     }
     $(`.${gameState.at(-1)}`).removeClass('hidden') //then only show the current game state elements, the last one in the gameState array
 
