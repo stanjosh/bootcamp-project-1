@@ -17,12 +17,16 @@
   <body>
     <div class="container main">
         <div class="card advice p-4">
-          <div class="card-content bgimg p-0">
-            <img id="cpuImage">
-          </div>
-          <p id="cpuName" class="title mx-auto"></p>
-          <footer class="card-footer">
-            <p class="card-footer-item" id="playerButtons">
+          
+          <p id="cpuName" class="card header playing hidden"></p>
+          <p id="cpuName" class="card header titleScreen hidden"></p>
+            <div class="card-content bgimg p-0">
+              <img id="cpuImage" class="mx-auto playing hidden">
+            </div>
+          
+
+          <footer class="card-footer  w-100">
+            <p class="card-footer-item playing hidden" id="playerButtons">
               <button class="button is-dark" id="rockButton" data-move="rock">
                 rock
               </button>
@@ -30,12 +34,20 @@
                 paper
               </button>
               <button class="button is-dark" id="scissorsButton" data-move="scissors">
-                rock
+                scissors
               </button>
+            
             </p>
+            <p class="matchmaking hidden">Finding an opponent for you...</p>
+            <button class="titleScreen hidden button is-dark" id="startButton">Find a match</p> 
           </footer>
         </div>
+        
     </div>
+    <header class="header">
+      <div class="navbar align-center">
+        <p id="playersOnline"></p>
+      </div></header>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
       integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="

@@ -1,3 +1,5 @@
+const gameState = ['titleScreen']
+
 async function rpsRequest(playerMove) {
     return {
         async: true,
@@ -15,7 +17,7 @@ function chooseOpp() {
 
 }
 
-function matchmaking() {
+function getOpp() {
     let robot = randomRobot().join(' ')
     var url = `https://robohash.org/${robot}`
     $('#cpuImage').attr('src', url)
@@ -29,4 +31,35 @@ $('#playerButtons').on('click', async (event) => {
     });
 })
 
+$('#startButton').on('click', findMatch)
 
+function findMatch() {
+    gameState.push('matchmaking')
+    drawGameState()
+    getOpp()
+    setTimeout(startMatch, (Math.random() * 2000) + 2000)
+}
+
+function startMatch() {
+    gameState.push('playing')
+    drawGameState()
+}
+
+function drawGameState() {
+    for (i in gameState) {
+        var gameStateElements = $(`.${gameState[i]}`); //declare a group of elements with all of the classes in the gameState array
+        $.each(gameStateElements, (elem) => {
+            $(gameStateElements[elem]).addClass('hidden') //then hide them all
+        })
+
+    }
+    $(`.${gameState.at(-1)}`).removeClass('hidden') //then only show the current game state elements, the last one in the gameState array
+
+    $('#playersOnline').text(`Robots online: ${howManyRobots()}`) //show how many opps there might be
+}
+
+function init() {
+    drawGameState()
+}
+
+$().ready(init)
