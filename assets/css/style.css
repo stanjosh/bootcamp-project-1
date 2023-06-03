@@ -1,8 +1,9 @@
 
 
 body {
+    background-color: black;
     background-position: center;
-    background-size: fill;
+    background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: all .5s;
@@ -17,16 +18,7 @@ left: 50%;
 transform: translateX(-50%) translateY(-50%);
 }
 
-.main {
-    height:max-content;
-    display: block;
-}
-
 .clear {
     opacity: 0;
 
-}
-
-#table {
-    max-width: 100%;
 }
