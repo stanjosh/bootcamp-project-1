@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>RockPaperScissors</title>
+</head>
+
+<body>
+  <!-- HEADER-->
+  <header>
+    <div class="header">
+      <h1>Humans... you have no chance... lets play... <span id="RPS"> Rock Paper Scissors</span></h1>
+    </div>
+  </header>
+
+  <!-- MAIN-->
+  <main>
+    <section>
+      <div class="back-image-container" style=" background-image: url('./images/Alien1.jpeg');">
+      </div>
+    </section>
+
+    <section id="points">
+      <div class="alien-points">
+        <h1 id="alien-txt-wins">Alien Points:&nbsp</h1>
+        <h1 id="alien-number-wins">0</h1>
+      </div>
+      <div class="countdown">
+        <h1 id="countdown">Timer: 00:00</h1>
+      </div>
+      <div class="human-points">
+        <h1 id="human-txt-wins">Human Points:&nbsp</h1>
+        <h1 id="human-number-wins">0</h1>
+      </div>
+    </section>
+
+    <section id="game">
+      <div class="alien-pic">
+         <img id="Pic1" alt="Alien" src="./images/Alien_player1.avif">
+         <button id="pick-alien" class="btn">Pick your player</button>
+      </div>
+      <div class="rock-paper-scissors">
+        <button id="lets-play" class="btn">Let's Play</button>
+      </div>
+      <div class="human-pic">
+          <img id="Pic2" alt="Human" src="./images/human_player1.jpeg">
+          <button id="pick-human" class="btn">Pick your player</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER-->
+  <footer>
+    <section class="winner">
+      <h1 class="footer-h2"> THE WINNER IS:</h1>
+    </section>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+    integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
