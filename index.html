@@ -13,63 +13,67 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Knowledge</title>
+    <title>Rock Paper Scissors</title>
   </head>
   <body>
-
-      <!-- HEADER-->
-      <header>
-        <div class="header">
-            <h1> Rock Paper Scissors </h1>
-            <div>
-                <nav>
-                    <ul>
-                        <li><a href="#about-me"> About Me</a></li>
-                        <li><a href="#work"> Work</a></li>
-                        <li><a href="#contact-me"> Contact Me</a></li>
-                        <li><a href="#resume"> Resume</a></li>
-                    </ul>
-                </nav>
-            </div>
         </div>
-    </header>
-
-    <div class="back-image-container">
-        <section class="back-image" style="background-image: url('./images/Alien1.jpeg')" ;
-            aria-label="Finger of Good">
-            <div>
-                <h2 class="back-image-caption1">Humans... you have no chance... lets play <span> rock paper scissors</span></h2>
-            </div>
-        </section>
-    </div>
-    <div class="container main">
-      <section class="section">
-        <div class="card advice">
-          <div class="card-content bgimg">
-            <table id="apiTable"></table>
+        
+        <div
+          class="container card-footer-item playing hidden is-justify-content-space-between w-100"
+          id="playerButtons"
+        >
+          <button class="button is-dark" id="rockButton" data-move="rock">
+            rock
+          </button>
+          <button class="button is-dark" id="paperButton" data-move="paper">
+            paper
+          </button>
+          <button
+            class="button is-dark"
+            id="scissorsButton"
+            data-move="scissors"
+          >
+            scissors
+          </button>
+          
+        </div>
+        <div
+            class="container card-footer-item endMatch hidden is-justify-content-space-between w-100"
+            id="playerButtons"
+          >
+            <button id="rematchButton" class="button is-dark w-100">
+              Rematch
+            </button>
+            <button class="button is-dark w-100" id="startButton">
+              Find a match
+            </button>
           </div>
-          <footer class="card-footer">
-            <p class="card-footer-item">
-              <button class="button is-dark" id="newStuff">
-                Get another one.
-              </button>
-            </p>
-          </footer>
-        </div>
-      </section>
+        <p id="robotsOnline" class="matchmaking titleScreen hidden"></p>
+        <footer class="card-footer w-100">
+          <div class="titleScreen matchmaking hidden container"></div>
+
+          <p id="playerRecord"></p>
+        </footer>
+      </div>
+
+      <div class="select w-75">
+        <select id="historicRobots"></select>
+      </div>
+      <button id="challengeButton" class="button">Challenge</button>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+        integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="./assets/js/robotNames.js"></script>
+      <script src="./assets/js/script.js"></script>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
-      integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./assets/js/script.js"></script>
   </body>
 </html>
