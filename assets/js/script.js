@@ -60,11 +60,14 @@ function drawGameState() {
   }
   $(`.${gameState.at(-1)}`).removeClass("hidden"); //then only show the current game state elements, the last one in the gameState array
   if (gameState.at(-1) == "playing") {
-    $("#cpuImage").attr("src", currentMatch.opp.image);
+    $("#mainImage").attr("src", currentMatch.opp.image);
     $("#cpuNameRecord").text(currentMatch.opp.nameString);
     $("#cpuRecord").text(
       ` W: ${currentMatch.opp.wins} L: ${currentMatch.opp.losses} D: ${currentMatch.opp.draws}`
     );
+  }
+  if (gameState.at(-1) == 'matchmaking') {
+    $('#mainImage').attr('src', './assets/img/gear.gif')
   }
   $("#robotsOnline").text(`Robots online: ${howManyRobots()}`); //show how many opps there might be
   $("#playerRecord").text(
@@ -105,24 +108,25 @@ class GameMatch {
     $("#matchInfo").text(`${this.opp.name[0]} plays ${matchData.ai.name}!`);
     $("#matchResult").text(`${matchData.result}`);
     console.log(matchData.result);
-    if (this.playerPoints >=! 2 && this.robotPoints >=! 2) {
-      if (matchData.result.includes("lose")) {
-        this.robotPoints++;
-      } else if (matchData.result.includes("win")) {
-        this.playerPoints++;
-      }
-      console.log(
-        this.playerPoints + " " + this.robotPoints
-      );
-    } else if (this.playerPoints > this.robotPoints) {
-      player.wins++;
-      this.opp.losses++;
-      this.endMatch('win');
-    } else {
-      this.opp.wins++;
-      player.losses++;
-      this.endMatch('lose');
+    if (matchData.result.includes("lose")) {
+      this.robotPoints++;
+    } else if (matchData.result.includes("win")) {
+      this.playerPoints++;
     }
+    $('#matchStats').text(
+      `You: ${this.playerPoints} Opponent: ${this.robotPoints}`
+    );
+    if (this.playerPoints >= 2 || this.robotPoints >= 2) {
+      if (this.playerPoints > this.robotPoints) {
+        player.wins++;
+        this.opp.losses++;
+        this.endMatch('win');
+      } else {
+        this.opp.wins++;
+        player.losses++;
+        this.endMatch('lose');
+      }
+  }
   }
   endMatch(cond) {
     $('endGameText').text = `You ${cond}!`

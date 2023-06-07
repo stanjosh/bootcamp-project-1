@@ -16,55 +16,45 @@
   </head>
   <body>
     <div class="container main w-100">
-      <div class="card advice p-4">
+      <div class="card p-4">
         <p class="matchmaking hidden">Finding an opponent for you...</p>
         <p id="cpuNameRecord" class="card header playing hidden"></p>
         <p id="cpuRecord" class="card header playing hidden"></p>
-        <div class="card-content bgimg p-0">
-          <img id="cpuImage" class="mx-auto playing hidden" />
-          <img
-            id="loadImage"
-            class="mx-auto matchmaking hidden"
-            src="./assets/img/gear.gif"
-          />
-
+        <div class="card-content bgimg p-0 mx-auto">
+          <img id="mainImage" />
         </div>
         <div class="container playing endMatch is-light">
           <p id="matchInfo" class="playing hidden"></p>
           <p id="matchResult" class="playing hidden"></p>
+          <p id="matchStats" class="playing hidden"></p>
           <p id="endMatchText" class="endMatch hidden"></p>
         </div>
         
         <div
-          class="container card-footer-item playing hidden is-justify-content-space-between w-100"
+          class="container card-footer-item playing endMatch hidden is-justify-content-space-between w-100"
           id="playerButtons"
         >
-          <button class="button is-dark" id="rockButton" data-move="rock">
+          <button class="button is-dark playing hidden" id="rockButton" data-move="rock">
             rock
           </button>
-          <button class="button is-dark" id="paperButton" data-move="paper">
+          <button class="button is-dark playing hidden" id="paperButton" data-move="paper">
             paper
           </button>
           <button
-            class="button is-dark"
+            class="button is-dark playing hidden"
             id="scissorsButton"
             data-move="scissors"
           >
             scissors
           </button>
-          
+          <button id="rematchButton" class="button is-dark w-100 endMatch hidden">
+            Rematch
+          </button>
+          <button class="button is-dark w-100 endMatch hidden" id="startButton">
+            Find a match
+          </button>
         </div>
-        <div
-            class="container card-footer-item endMatch hidden is-justify-content-space-between w-100"
-            id="playerButtons"
-          >
-            <button id="rematchButton" class="button is-dark w-100">
-              Rematch
-            </button>
-            <button class="button is-dark w-100" id="startButton">
-              Find a match
-            </button>
-          </div>
+
         <p id="robotsOnline" class="matchmaking titleScreen hidden"></p>
         <footer class="card-footer w-100">
           <div class="titleScreen matchmaking hidden container"></div>
