@@ -12,37 +12,85 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Knowledge</title>
+    <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div class="container main">
-      <section class="section">
-        <div class="card advice">
-          <div class="card-content bgimg">
-            <table id="apiTable"></table>
-          </div>
-          <footer class="card-footer">
-            <p class="card-footer-item">
-              <button class="button is-dark" id="newStuff">
-                Get another one.
-              </button>
-            </p>
-          </footer>
+    <div class="container main w-100">
+      <div class="card advice p-4">
+        <p class="matchmaking hidden">Finding an opponent for you...</p>
+        <p id="cpuNameRecord" class="card header playing hidden"></p>
+        <p id="cpuRecord" class="card header playing hidden"></p>
+        <div class="card-content bgimg p-0">
+          <img id="cpuImage" class="mx-auto playing hidden" />
+          <img
+            id="loadImage"
+            class="mx-auto matchmaking hidden"
+            src="./assets/img/gear.gif"
+          />
+
         </div>
-      </section>
+        <div class="container playing endMatch is-light">
+          <p id="matchInfo" class="playing hidden"></p>
+          <p id="matchResult" class="playing hidden"></p>
+          <p id="endMatchText" class="endMatch hidden"></p>
+        </div>
+        
+        <div
+          class="container card-footer-item playing hidden is-justify-content-space-between w-100"
+          id="playerButtons"
+        >
+          <button class="button is-dark" id="rockButton" data-move="rock">
+            rock
+          </button>
+          <button class="button is-dark" id="paperButton" data-move="paper">
+            paper
+          </button>
+          <button
+            class="button is-dark"
+            id="scissorsButton"
+            data-move="scissors"
+          >
+            scissors
+          </button>
+          
+        </div>
+        <div
+            class="container card-footer-item endMatch hidden is-justify-content-space-between w-100"
+            id="playerButtons"
+          >
+            <button id="rematchButton" class="button is-dark w-100">
+              Rematch
+            </button>
+            <button class="button is-dark w-100" id="startButton">
+              Find a match
+            </button>
+          </div>
+        <p id="robotsOnline" class="matchmaking titleScreen hidden"></p>
+        <footer class="card-footer w-100">
+          <div class="titleScreen matchmaking hidden container"></div>
+
+          <p id="playerRecord"></p>
+        </footer>
+      </div>
+
+      <div class="select w-75">
+        <select id="historicRobots"></select>
+      </div>
+      <button id="challengeButton" class="button">Challenge</button>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+        integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="./assets/js/robotNames.js"></script>
+      <script src="./assets/js/script.js"></script>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
-      integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./assets/js/script.js"></script>
   </body>
 </html>
