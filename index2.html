@@ -46,20 +46,67 @@
     </section>
 
     <section id="game">
-      <div class="alien-pic">
-         <!-- <img id="Pic1" alt="Alien" src="./images/Alien_player1.avif"> -->
+      <div class="robots">
+        <div class="select w-75">
+          <select id="historicRobots"></select>
+        </div>
+        <div class="container playing endMatch is-light">
+          <p id="matchInfo" class="playing hidden"></p>
+          <p id="matchResult" class="playing hidden"></p>
+          <p id="matchStats" class="playing hidden"></p>
+          <p id="endMatchText" class="endMatch hidden"></p>
+        </div>
+       
       </div>
       <div class="rock-paper-scissors">
+
+        <p class="matchmaking hidden">Finding an opponent for you...</p>
+        <p id="cpuNameRecord" class="card header playing hidden"></p>
+        <!-- <p id="cpuRecord" class="card header playing hidden"></p> -->
         <div class="card-content bgimg p-0 mx-auto">
           <img id="mainImage" />
         </div>
+       
+      
       </div>
     </section>
+
+   
 
   </main>
 
   <!-- FOOTER-->
   <footer>
+    <section id="some-buttons">
+    <section id="play">
+      <button id="challengeButton" class="button">Challenge</button>
+    </section>
+
+    <div
+    class="container card-footer-item playing endMatch hidden is-justify-content-space-between w-100"
+    id="playerButtons"
+  > 
+    <button class="button is-dark playing hidden" id="rockButton" data-move="rock">
+      rock
+    </button>
+    <button class="button is-dark playing hidden" id="paperButton" data-move="paper">
+      paper
+    </button>
+    <button
+      class="button is-dark playing hidden"
+      id="scissorsButton"
+      data-move="scissors"
+    >
+      scissors
+    </button>
+    <button id="rematchButton" class="button is-dark w-100 endMatch hidden">
+      Rematch
+    </button>
+    <button class="button is-dark w-100 endMatch hidden" id="startButton">
+      Find a match
+    </button>
+  </div>
+</section>
     <section class="robots-online">
       <p id="robotsOnline" class="matchmaking titleScreen hidden"></p>
     </section>

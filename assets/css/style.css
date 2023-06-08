@@ -12,7 +12,7 @@ body{
 }
 
 /* || HEADER */
-header, footer{
+header{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--header_back_color);
     color: #ffffff; 
@@ -21,15 +21,11 @@ header, footer{
     border: 5px solid var( --border_color);
     text-align: center;
     font-size: 18px;
-   
 }
 
 .back-image-container{
    border: 15px solid var( --border_color);
    height: 200px;
-   /* background-size: cover; */
-  
-   /* "auto|length|cover|contain|intial|inherit" */
 }
 
 #RPS{
@@ -42,7 +38,7 @@ header, footer{
     margin-top: var(--margin_size);
     width: 100%;
     border: 5px solid var(--header_back_color);
-
+    height: auto;
 }
 
 .Robot-points, .Your-points, .robots-playing{
@@ -52,8 +48,6 @@ header, footer{
     justify-content: center;
     font-weight: 900;
     font-size: 18px;
-
-
 }
 
 #game{
@@ -61,17 +55,17 @@ header, footer{
     padding: 20px;
     margin: var(--margin_size);
     width: 98.5%;
-    justify-content: center;
+    justify-content:space-between;
 }
 
-.alien-pic, .rock-paper-scissors{
+.robots-history, .rock-paper-scissors{
     height: auto;
     width: 45%;
     padding: 30px;
     align-items: center;
-    /* height: 300px; */
-
+    height: 300px;
 }
+
 /* body {
     background-color: black;
     background-position: center;
@@ -101,12 +95,30 @@ header, footer{
     border: 5px solid var(--header_back_color);
 }
 
-#Pic1, #Pic2{
-   height: 150px;
-   width: 200px;
+#play{
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+    justify-content: center;
 }
 
+footer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--header_back_color);
+    color: #ffffff; 
+    width: 100%;
+    height: auto;
+    border: 5px solid var( --border_color);
+    text-align: center;
+    font-size: 18px;
+}
 
+#some-buttons{
+    display: flex;
+    justify-content:left;
+}
+/* 
 .btn {
     border: none;
     background-color: var(--header_back_color);
@@ -118,4 +130,4 @@ header, footer{
 
   }
 
-
+ */

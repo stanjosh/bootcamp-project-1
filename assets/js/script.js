@@ -69,7 +69,7 @@ function drawGameState() {
   if (gameState.at(-1) == 'matchmaking') {
     $('#mainImage').attr('src', './assets/img/gear.gif')
   }
-  $("#robotsOnline").text(`Robots online: ${howManyRobots()}`); //show how many opps there might be
+  $("#robotsOnline").text(`You have ${howManyRobots()} robots online to play with `); //show how many opps there might be
   $("#playerRecord").text(
     `W: ${player.wins} L: ${player.losses} D: ${player.draws}`
   );
