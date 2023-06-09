@@ -63,7 +63,7 @@ header{
     width: 45%;
     padding: 30px;
     align-items: center;
-    height: 300px;
+    height: 350px;
 }
 
 /* body {
@@ -91,9 +91,9 @@ header{
 
 }
 
-.rock-paper-scissors{
+/* .rock-paper-scissors{
     border: 5px solid var(--header_back_color);
-}
+} */
 
 #play{
     display: flex;
@@ -115,7 +115,7 @@ footer{
 }
 
 #some-buttons{
-    display: flex;
+    /* display: flex; */
     justify-content:left;
 }
 /* 
