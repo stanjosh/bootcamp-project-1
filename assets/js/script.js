@@ -39,14 +39,16 @@ function drawHistoricRobots() {
     +` data-robot="matchmaking"`
     +`>find opponent</option>`
   $("#historicRobots").append(matchmakingEl);
-  for (var i in robotStorage) {
+  var sliceRobotStorage = robotStorage.slice(-11, -1);
+
+  for (var i in sliceRobotStorage) {
     let robot =
       `<option class="button is-justify-content-space-between w-100"` +
-      `data-robot="${robotStorage[i].nameString}">` +
-      `${robotStorage[i].nameString}` +
-      ` W: ${robotStorage[i].wins}` +
-      ` L: ${robotStorage[i].losses}` +
-      ` D: ${robotStorage[i].draws} </option>`;
+      `data-robot="${sliceRobotStorage[i].nameString}">` +
+      `${sliceRobotStorage[i].nameString}` +
+      ` W: ${sliceRobotStorage[i].wins}` +
+      ` L: ${sliceRobotStorage[i].losses}` +
+      ` D: ${sliceRobotStorage[i].draws} </option>`;
     $("#historicRobots").append(robot);
   }
 }

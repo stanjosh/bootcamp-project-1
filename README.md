@@ -1,2 +1,3 @@
-# bootcamp-project-1
-Bootcamp Project
+## Description 
+We have created an application to alliviate boredom, or provide an extraterrestrial friend  
+
