@@ -5,12 +5,15 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
-    integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+  integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>RockPaperScissors</title>
+  <title>Rock Paper Scissors</title>
 </head>
 
 <body>
@@ -24,55 +27,99 @@
   <!-- MAIN-->
   <main>
     <section>
-      <div class="back-image-container" style=" background-image: url('./images/Alien1.jpeg');">
+      <div class="back-image-container" style=" background-image: url('./images/RPS_playing.jpeg');">
       </div>
     </section>
 
     <section id="points">
-      <div class="alien-points">
-        <h1 id="alien-txt-wins">Alien Points:&nbsp</h1>
-        <h1 id="alien-number-wins">0</h1>
+      <div class="Robot-points">
+        <p id="alien-txt-wins">Robot Points:&nbsp</p>
+        <p id="Robot-number-wins">0</p>
       </div>
-      <div class="countdown">
-        <h1 id="countdown">Timer: 00:00</h1>
+      <div class="robots-playing">
+        <p class="footer-h2"><span  id="winner">Best 2 out 3</span></p>
       </div>
-      <div class="human-points">
-        <h1 id="human-txt-wins">Human Points:&nbsp</h1>
-        <h1 id="human-number-wins">0</h1>
+      <div class="Your-points">
+        <p id="human-txt-wins">Your Points:&nbsp</p>
+        <p id="Your-number-wins">0</p>
       </div>
     </section>
 
     <section id="game">
-      <div class="alien-pic">
-         <img id="Pic1" alt="Alien" src="./images/Alien_player1.avif">
-         <button id="pick-alien" class="btn">Pick your player</button>
+      <div class="robots">
+        <div class="select">
+          <select id="historicRobots"></select>
+        </div>
+        <div class="container playing endMatch is-light">
+        
+          <p id="matchResult" class="playing hidden"></p>
+          <p id="matchStats" class="playing hidden"></p>
+          <p id="endMatchText" class="endMatch hidden"></p>
+        </div>
+       
       </div>
       <div class="rock-paper-scissors">
-        <button id="lets-play" class="btn">Let's Play</button>
-      </div>
-      <div class="human-pic">
-          <img id="Pic2" alt="Human" src="./images/human_player1.jpeg">
-          <button id="pick-human" class="btn">Pick your player</button>
+
+        <!-- <p class="matchmaking hidden">Finding an opponent for you...</p> -->
+        <p id="cpuNameRecord" class="header playing hidden"></p>
+        <!-- <p id="cpuRecord" class="card header playing hidden"></p> -->
+        <div class="bgimg p-0 mx-auto">
+          <img id="mainImage" />
+        </div>
+        <p id="matchInfo" class="playing hidden"></p>
+        <div
+        class="container playing endMatch hidden is-justify-content-space-between w-100"
+        id="playerButtons"
+      > 
+        <button class="button is-dark playing hidden" id="rockButton" data-move="rock">
+          rock
+        </button>
+        <button class="button is-dark playing hidden" id="paperButton" data-move="paper">
+          paper
+        </button>
+        <button
+          class="button is-dark playing hidden"
+          id="scissorsButton"
+          data-move="scissors"
+        >
+          scissors
+        </button>
+        <button id="rematchButton" class="button is-dark w-100 endMatch hidden">
+          Rematch
+        </button>
+        <button class="button is-dark w-100 endMatch hidden" id="startButton">
+          Find a match
+        </button>
       </div>
     </section>
+       
+      
+      </div>
+    </section>
+
+   
 
   </main>
 
   <!-- FOOTER-->
   <footer>
-    <section class="winner">
-      <h1 class="footer-h2"> THE WINNER IS:</h1>
+    <section id="some-buttons">
+    <section id="play">
+      <button id="challengeButton" class="button">Challenge</button>
+    </section>
+
+   
+    <section class="robots-online">
+      <p id="robotsOnline" class="matchmaking titleScreen hidden"></p>
     </section>
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
-    integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/robotNames.js"></script>
 </body>
 
 </html>

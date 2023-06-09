@@ -37,18 +37,26 @@ function drawHistoricRobots() {
     var matchmakingEl = `<option` 
     +` class="button is-justify-content-space-between w-100"`
     +` data-robot="matchmaking"`
-    +`>find opponent</option>`
+    +`>Previous Opponents</option>`
   $("#historicRobots").append(matchmakingEl);
   var sliceRobotStorage = robotStorage.slice(-11, -1);
 
   for (var i in sliceRobotStorage) {
     let robot =
       `<option class="button is-justify-content-space-between w-100"` +
+
       `data-robot="${sliceRobotStorage[i].nameString}">` +
       `${sliceRobotStorage[i].nameString}` +
       ` W: ${sliceRobotStorage[i].wins}` +
       ` L: ${sliceRobotStorage[i].losses}` +
       ` D: ${sliceRobotStorage[i].draws} </option>`;
+      `data-robot="${robotStorage[i].nameString}">` +
+      `${robotStorage[i].nameString}` +
+      // ` W: ${robotStorage[i].wins}` +
+      // ` L: ${robotStorage[i].losses}` +
+      // ` D: ${robotStorage[i].draws}` +
+      `</option>`;
+
     $("#historicRobots").append(robot);
   }
 }
@@ -71,7 +79,7 @@ function drawGameState() {
   if (gameState.at(-1) == 'matchmaking') {
     $('#mainImage').attr('src', './assets/img/gear.gif')
   }
-  $("#robotsOnline").text(`Robots online: ${howManyRobots()}`); //show how many opps there might be
+  $("#robotsOnline").text(`You have ${howManyRobots()} robots online to play with `); //show how many opps there might be
   $("#playerRecord").text(
     `W: ${player.wins} L: ${player.losses} D: ${player.draws}`
   );
@@ -108,15 +116,23 @@ class GameMatch {
   }
   scoreMatch(matchData) {
     $("#matchInfo").text(`${this.opp.name[0]} plays ${matchData.ai.name}!`);
-    $("#matchResult").text(`${matchData.result}`);
+    // $("#matchResult").text(`${matchData.result}`);
+    $("#winner").text(`${matchData.result}`);
     console.log(matchData.result);
     if (matchData.result.includes("lose")) {
       this.robotPoints++;
     } else if (matchData.result.includes("win")) {
       this.playerPoints++;
     }
-    $('#matchStats').text(
-      `You: ${this.playerPoints} Opponent: ${this.robotPoints}`
+    // $('#matchStats').text(
+    //   `You: ${this.playerPoints} Opponent: ${this.robotPoints}`
+    // );
+    //Added numbr of wins
+    $('#Robot-number-wins').text(
+      `${this.robotPoints}`
+    );
+    $('#Your-number-wins').text(
+      `${this.playerPoints}`
     );
     if (this.playerPoints >= 2 || this.robotPoints >= 2) {
       if (this.playerPoints > this.robotPoints) {
