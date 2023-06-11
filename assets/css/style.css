@@ -59,9 +59,7 @@ header{
 }
 
 .robots-history, .rock-paper-scissors{
-    /* height: auto; */
     width: 45%;
-    /* padding: 30px; */
     align-items: center;
     height: 300px;
 }
@@ -108,19 +106,6 @@ footer{
 }
 
 #some-buttons{
-    /* display: flex; */
     justify-content:left;
 }
-/* 
-.btn {
-    border: none;
-    background-color: var(--header_back_color);
-    color: hsl(0, 0%, 100%);
-    text-align: center;
-    cursor: pointer;
-    margin: var(--margin_size);
-    width: 160px;
 
-  }
-
- */
