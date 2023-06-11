@@ -59,23 +59,12 @@ header{
 }
 
 .robots-history, .rock-paper-scissors{
-    height: auto;
+    /* height: auto; */
     width: 45%;
-    padding: 30px;
+    /* padding: 30px; */
     align-items: center;
-    height: 350px;
+    height: 300px;
 }
-
-/* body {
-    background-color: black;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    transition: all .5s;
-    min-height: 100vh;
-    transition: all .2s;
-} */
 
 .main {
     max-width: 475px;
@@ -91,16 +80,20 @@ header{
 
 }
 
-/* .rock-paper-scissors{
-    border: 5px solid var(--header_back_color);
-} */
-
 #play{
     display: flex;
     padding: 5px;
     width: 100%;
     height: auto;
     justify-content: center;
+}
+
+#mainImage{
+    height: 200px;
+}
+
+#robot-player{
+    display: flex;
 }
 
 footer{
