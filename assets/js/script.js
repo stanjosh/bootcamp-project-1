@@ -79,6 +79,11 @@ function drawGameState() {
   $("#playerRecord").text(
     `W: ${player.wins} L: ${player.losses} D: ${player.draws}`
   );
+  if (gameState.at(-1) == 'endMatch') {
+    console.log(currentMatch.opp.nameString)
+    $("#startButton").on("click", findMatch);
+    $("#rematchButton").on("click", () => {findMatch(currentMatch.opp.nameString)});
+  }
   drawHistoricRobots();
 }
 
@@ -96,7 +101,8 @@ async function rpsRequest(playerMove) {
 }
 
 class GameMatch {
-  constructor(robotOpp) {
+  constructor(...robotOpp) {
+    console.log(robotOpp);
     this.matchPoints = 0;
     this.playerPoints = 0;
     this.robotPoints = 0;
@@ -149,8 +155,12 @@ class GameMatch {
     $('#endGameText').text = `You ${cond}!`
     gameState.push('endMatch')
     drawGameState()
+
   }
+
 }
+
+
 
 function findMatch(opp = false) {
   function startMatch() {
@@ -164,8 +174,7 @@ function findMatch(opp = false) {
   setTimeout(startMatch, Math.random() * 2000 + 2000);
 }
 
-$("#startButton").on("click", findMatch);
-$("#rematchButton").on("click", findMatch(this.opp.nameString));
+
 
 $("#playerButtons").on("click", async (event) => {
   settings = await rpsRequest($(event.target).data("move"));
