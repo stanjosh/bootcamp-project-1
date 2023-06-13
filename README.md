@@ -10,3 +10,16 @@ I can challenge the robots to the best 2 out of three games wins match.
 The game features a rematch button or you can challenge a new robot.
 The list of robots is randomly selected from the RoboHash API.
 
+
+
+
+
+
+
+[link to gitHub  deployment ](https://stanjosh.github.io/bootcamp-project-1/)
+
+
+
+
+
+![screenshot of robots](./images/screenshot-project-1.png)
