@@ -165,7 +165,7 @@ function findMatch(opp = false) {
 }
 
 $("#startButton").on("click", findMatch);
-$("#rematchButton").on("click", findMatch(this.opp.nameString));
+$("#rematchButton").on("click", findMatch(currentMatch.opp.nameString));
 
 $("#playerButtons").on("click", async (event) => {
   settings = await rpsRequest($(event.target).data("move"));
