@@ -72,12 +72,15 @@ function drawGameState() {
   if (gameState.at(-1) == "playing") {
     $("#mainImage").attr("src", currentMatch.opp.image);
     $("#cpuNameRecord").text(currentMatch.opp.nameString);
+    $("#robot-wins").text(currentMatch.opp.wins);
+    $("#robot-loses").text(currentMatch.opp.losses);
+    $("#robot-draws").text(currentMatch.opp.draws);
     $("#cpuRecord").text(
       ` W: ${currentMatch.opp.wins} L: ${currentMatch.opp.losses} D: ${currentMatch.opp.draws}`
     );
   }
   if (gameState.at(-1) == 'matchmaking') {
-    $('#mainImage').attr('src', './assets/img/gear.gif')
+    $('#mainImage').attr('src', './images/gear.gif')
   }
   $("#robotsOnline").text(`You have ${howManyRobots()} robots online to play with `); //show how many opps there might be
   $("#playerRecord").text(
@@ -115,7 +118,7 @@ class GameMatch {
     drawGameState();
   }
   scoreMatch(matchData) {
-    $("#matchInfo").text(`${this.opp.name[0]} plays ${matchData.ai.name}!`);
+    $("#matchInfo").text(` plays ${matchData.ai.name}!`);
     // $("#matchResult").text(`${matchData.result}`);
     $("#winner").text(`${matchData.result}`);
     console.log(matchData.result);
