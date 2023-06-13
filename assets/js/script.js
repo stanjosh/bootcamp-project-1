@@ -39,24 +39,16 @@ function drawHistoricRobots() {
     +` data-robot="matchmaking"`
     +`>Previous Opponents</option>`
   $("#historicRobots").append(matchmakingEl);
-  // var sliceRobotStorage = robotStorage.slice(-11, -1);
-
   for (var i in robotStorage) {
     let robot =
       `<option class="button is-justify-content-space-between w-100"` +
-
       `data-robot="${robotStorage[i].nameString}">` +
       `${robotStorage[i].nameString}` +
       ` W: ${robotStorage[i].wins}` +
       ` L: ${robotStorage[i].losses}` +
       ` D: ${robotStorage[i].draws} </option>`;
       `data-robot="${robotStorage[i].nameString}">` +
-      `${robotStorage[i].nameString}` +
-      // ` W: ${robotStorage[i].wins}` +
-      // ` L: ${robotStorage[i].losses}` +
-      // ` D: ${robotStorage[i].draws}` +
       `</option>`;
-
     $("#historicRobots").append(robot);
   }
 }
@@ -69,6 +61,7 @@ function drawGameState() {
     });
   }
   $(`.${gameState.at(-1)}`).removeClass("hidden"); //then only show the current game state elements, the last one in the gameState array
+  console.log(gameState, gameState.at(-1))
   if (gameState.at(-1) == "playing") {
     $("#mainImage").attr("src", currentMatch.opp.image);
     $("#cpuNameRecord").text(currentMatch.opp.nameString);
@@ -103,7 +96,7 @@ async function rpsRequest(playerMove) {
 }
 
 class GameMatch {
-  constructor(...robotOpp) {
+  constructor(robotOpp) {
     this.matchPoints = 0;
     this.playerPoints = 0;
     this.robotPoints = 0;
@@ -137,6 +130,7 @@ class GameMatch {
     $('#Your-number-wins').text(
       `${this.playerPoints}`
     );
+
     if (this.playerPoints >= 2 || this.robotPoints >= 2) {
       if (this.playerPoints > this.robotPoints) {
         player.wins++;
@@ -147,14 +141,14 @@ class GameMatch {
         player.losses++;
         this.endMatch('lose');
       }
+    }
   }
-  }
+
   endMatch(cond) {
-    $('endGameText').text = `You ${cond}!`
+    console.log('endmatch state')
+    $('#endGameText').text = `You ${cond}!`
     gameState.push('endMatch')
     drawGameState()
-    $("#startButton").on("click", findMatch);
-    $("#rematchButton").on("click", findMatch, {robotOpp:this.opp.name});
   }
 }
 
@@ -169,6 +163,9 @@ function findMatch(opp = false) {
   console.log(opp);
   setTimeout(startMatch, Math.random() * 2000 + 2000);
 }
+
+$("#startButton").on("click", findMatch);
+$("#rematchButton").on("click", findMatch(this.opp.nameString));
 
 $("#playerButtons").on("click", async (event) => {
   settings = await rpsRequest($(event.target).data("move"));
