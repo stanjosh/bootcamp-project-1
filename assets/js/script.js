@@ -174,7 +174,12 @@ function findMatch(opp = false) {
   setTimeout(startMatch, Math.random() * 2000 + 2000);
 }
 
+endmatch-bugfix
+$("#startButton").on("click", findMatch);
+$("#rematchButton").on("click", findMatch(currentMatch.opp.nameString));
 
+
+main
 
 $("#playerButtons").on("click", async (event) => {
   settings = await rpsRequest($(event.target).data("move"));
