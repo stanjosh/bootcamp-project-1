@@ -39,15 +39,24 @@ function drawHistoricRobots() {
     +` data-robot="matchmaking"`
     +`>Previous Opponents</option>`
   $("#historicRobots").append(matchmakingEl);
-  for (var i in robotStorage) {
+  var sliceRobotStorage = robotStorage.slice(-11, -1);
+
+  for (var i in sliceRobotStorage) {
     let robot =
       `<option class="button is-justify-content-space-between w-100"` +
+
+      `data-robot="${sliceRobotStorage[i].nameString}">` +
+      `${sliceRobotStorage[i].nameString}` +
+      ` W: ${sliceRobotStorage[i].wins}` +
+      ` L: ${sliceRobotStorage[i].losses}` +
+      ` D: ${sliceRobotStorage[i].draws} </option>`;
       `data-robot="${robotStorage[i].nameString}">` +
       `${robotStorage[i].nameString}` +
       // ` W: ${robotStorage[i].wins}` +
       // ` L: ${robotStorage[i].losses}` +
       // ` D: ${robotStorage[i].draws}` +
       `</option>`;
+
     $("#historicRobots").append(robot);
   }
 }
@@ -63,12 +72,15 @@ function drawGameState() {
   if (gameState.at(-1) == "playing") {
     $("#mainImage").attr("src", currentMatch.opp.image);
     $("#cpuNameRecord").text(currentMatch.opp.nameString);
+    $("#robot-wins").text(currentMatch.opp.wins);
+    $("#robot-loses").text(currentMatch.opp.losses);
+    $("#robot-draws").text(currentMatch.opp.draws);
     $("#cpuRecord").text(
       ` W: ${currentMatch.opp.wins} L: ${currentMatch.opp.losses} D: ${currentMatch.opp.draws}`
     );
   }
   if (gameState.at(-1) == 'matchmaking') {
-    $('#mainImage').attr('src', './assets/img/gear.gif')
+    $('#mainImage').attr('src', './images/gear.gif')
   }
   $("#robotsOnline").text(`You have ${howManyRobots()} robots online to play with `); //show how many opps there might be
   $("#playerRecord").text(
@@ -106,7 +118,7 @@ class GameMatch {
     drawGameState();
   }
   scoreMatch(matchData) {
-    $("#matchInfo").text(`${this.opp.name[0]} plays ${matchData.ai.name}!`);
+    $("#matchInfo").text(` plays ${matchData.ai.name}!`);
     // $("#matchResult").text(`${matchData.result}`);
     $("#winner").text(`${matchData.result}`);
     console.log(matchData.result);
