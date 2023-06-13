@@ -14,16 +14,24 @@ The game features a rematch button or you can challenge a new robot.
 The list of robots is randomly selected from the RoboHash API.
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> ab8842f945db92dd5225c938f11d6961696e7699
 
 [link to gitHub  deployment ](https://stanjosh.github.io/bootcamp-project-1/)
 
 
+<<<<<<< HEAD
 
 
 
 
 ![screenshot of robots](./images/screenshot-project-1.png)
+=======
+![screenshot of robots](./images/screenshot-project-1.png)
+
+>>>>>>> ab8842f945db92dd5225c938f11d6961696e7699
