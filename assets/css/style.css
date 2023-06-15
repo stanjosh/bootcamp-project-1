@@ -20,12 +20,15 @@ header{
     height: 55px;
     border: 5px solid var( --border_color);
     text-align: center;
-    /* font-size: 18px; */
+    border-top-left-radius : 5px;
+    border-top-right-radius : 5px;
 }
 
 .back-image-container{
    border: 15px solid var( --border_color);
    height: 200px;
+   border-bottom-left-radius:  5px;
+   border-bottom-right-radius:  5px;
 }
 
 #RPS{
@@ -34,27 +37,24 @@ header{
 
 #points{
     display: flex;
-    /* padding: 5px; */
     margin-top: var(--margin_size);
     width: 100%;
     border: 5px solid var(--header_back_color);
     height: auto;
     justify-content: center;
+    border-radius: 5px;
 }
 
 .Robot-points, .Your-points, .robots-playing{
     display: flex;
     width: 33%;
-    /* padding: 5px; */
     justify-content: center;
     font-weight: 900;
-    /* font-size: 18px; */
 }
 
 
 #game{
     display: flex;
-    /* padding: 20px; */
     margin: var(--margin_size);
     width: 98.5%;
     justify-content:space-between;
@@ -82,7 +82,6 @@ header{
 
 #play{
     display: flex;
-    /* padding: 5px; */
     width: 100%;
     height: auto;
     justify-content: center;
@@ -119,7 +118,7 @@ footer{
     height: auto;
     border: 5px solid var( --border_color);
     text-align: center;
-    /* font-size: 18px; */
+    border-radius: 5px;
 }
 
 #some-buttons{
@@ -151,7 +150,6 @@ footer{
         height: 75px;
     }
 
-    /* Add line break after this element */
     header div h1 #RPS::before,
     #points .Robot-points #alien-txt-wins span::before,
     #points .robots-playing #winner span::before,
