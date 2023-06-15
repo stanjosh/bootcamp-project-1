@@ -14,7 +14,7 @@
 
 <body>
   <!-- HEADER-->
-  <header>
+  <header is-size-5>
     <div class="header">
       <h1>Humans... you have no chance... <span id="lets">lets play... </span><span id="RPS"> Rock Paper Scissors</span></h1>
     </div>
@@ -27,7 +27,7 @@
       </div>
     </section>
 
-    <section id="points">
+    <section id="points" class="p-1 is-size-5">
       <div class="Robot-points">
         <p id="alien-txt-wins">Robot <span>Points:&nbsp</span></p>
         <p id="Robot-number-wins">0</p>
@@ -42,7 +42,7 @@
       </div>
     </section>
 
-    <section id="game">
+    <section id="game" class="p-4">
       <div class="robots">
         <div class="select">
           <select id="historicRobots"></select>
@@ -78,8 +78,8 @@
           </button>
 
           <div class=" playing endMatch hidden ">
-            <p><span > Wins: </span><span id="robot-wins"> </span>
-              <span class="wld"> Losses: </span><span id="robot-loses"> </span>
+            <p><span > Wins: </span><span id="robot-wins" > </span>
+              <span class="wld"> Losses: </span><span id="robot-loses" > </span>
               <span class="wld"> Draws:</span> <span id="robot-draws"> </span>
             </p>
           </div>
@@ -90,15 +90,13 @@
   </main>
 
   <!-- FOOTER-->
-  <footer>
+  <footer is-size-5 >
     <section id="some-buttons">
-      <section id="play">
-        <button id="challengeButton" class="button">Challenge</button>
+      <section id="play" class="p-1">
+        <button id="challengeButton" class="button has-text-weight-bold">Challenge</button>
       </section>
-
-
-      <section class="robots-online">
-        <p id="robotsOnline" class="matchmaking titleScreen hidden"></p>
+      <section class="robots-online " >
+        <p id="robotsOnline" class="matchmaking titleScreen hidden has-text-weight-bold"></p>
       </section>
   </footer>
 
