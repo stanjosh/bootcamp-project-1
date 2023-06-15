@@ -3,10 +3,14 @@ var robotStorage = {};
 var player = { wins: 0, losses: 0, draws: 0 };
 var currentMatch;
 
+
+var oppSet = 1
+
+
 function saveData() {
   localStorage.setItem("robotStorage", JSON.stringify(robotStorage));
   localStorage.setItem("player", JSON.stringify(player));
-  console.log(localStorage);
+
 }
 
 function loadData() {
@@ -22,7 +26,7 @@ class RobotOpp {
   constructor() {
     this.name = randomRobot();
     this.nameString = this.name.join(" ");
-    this.image = `https://robohash.org/${this.nameString}`;
+    this.image = `https://robohash.org/${this.nameString}?set=set${oppSet}`;
     new Image().src = this.image; //preload the image
     this.wins = 0;
     this.losses = 0;
@@ -61,7 +65,7 @@ function drawGameState() {
     });
   }
   $(`.${gameState.at(-1)}`).removeClass("hidden"); //then only show the current game state elements, the last one in the gameState array
-  console.log(gameState, gameState.at(-1))
+
   if (gameState.at(-1) == "playing") {
     $("#mainImage").attr("src", currentMatch.opp.image);
     $("#cpuNameRecord").text(currentMatch.opp.nameString);
@@ -80,7 +84,7 @@ function drawGameState() {
     `W: ${player.wins} L: ${player.losses} D: ${player.draws}`
   );
   if (gameState.at(-1) == 'endMatch') {
-    console.log(currentMatch.opp.nameString)
+
     $("#startButton").on("click", findMatch);
     $("#rematchButton").on("click", () => {findMatch(currentMatch.opp.nameString)});
   }
@@ -102,7 +106,7 @@ async function rpsRequest(playerMove) {
 
 class GameMatch {
   constructor(...robotOpp) {
-    console.log(robotOpp);
+
     this.matchPoints = 0;
     this.playerPoints = 0;
     this.robotPoints = 0;
@@ -118,18 +122,15 @@ class GameMatch {
   }
   scoreMatch(matchData) {
     $("#matchInfo").text(` plays ${matchData.ai.name}!`);
-    // $("#matchResult").text(`${matchData.result}`);
+
     $("#winner").text(`${matchData.result}`);
-    console.log(matchData.result);
+
     if (matchData.result.includes("lose")) {
       this.robotPoints++;
     } else if (matchData.result.includes("win")) {
       this.playerPoints++;
     }
-    // $('#matchStats').text(
-    //   `You: ${this.playerPoints} Opponent: ${this.robotPoints}`
-    // );
-    //Added numbr of wins
+
     $('#Robot-number-wins').text(
       `${this.robotPoints}`
     );
@@ -151,7 +152,7 @@ class GameMatch {
   }
 
   endMatch(cond) {
-    console.log('endmatch state')
+
     $('#endGameText').text = `You ${cond}!`
     gameState.push('endMatch')
     drawGameState()
@@ -169,7 +170,7 @@ function findMatch(opp = false) {
   gameState.push("matchmaking");
   drawGameState();
   currentMatch = new GameMatch(opp);
-  console.log(opp);
+
   setTimeout(startMatch, Math.random() * 2000 + 2000);
 }
 
@@ -183,10 +184,35 @@ $("#playerButtons").on("click", async (event) => {
 
 $("#challengeButton").on("click", () => {
   newOpp = $("#historicRobots").find(":selected").data("robot");
-  console.log(newOpp);
+
   findMatch(newOpp);
 });
 
+document.addEventListener('keydown', (event) => {
+  var name = event.key;
+  var code = event.code;
+  if (code === 'Digit1') {
+    oppSet = 1
+    alert('robots enabled ')
+  }
+  if (code === 'Digit2') {
+    oppSet = 2
+    alert('chuds enabled ')
+  }
+  if (code === 'Digit3') {
+    oppSet = 3
+    alert('more differenter robots enabled ')
+  }
+  if (code === 'Digit4') {
+    oppSet = 4
+    alert('kiddens enabled')
+  }
+  if (code === 'Digit5') {
+    oppSet = 5
+    alert('humans enabled')
+  }
+  console.log(code)
+}, false);
 
 function init() {
   loadData();
