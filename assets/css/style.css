@@ -39,12 +39,13 @@ header{
     width: 100%;
     border: 5px solid var(--header_back_color);
     height: auto;
+    justify-content: center;
 }
 
 .Robot-points, .Your-points, .robots-playing{
     display: flex;
     width: 33%;
-    padding: 5px;
+    /* padding: 5px; */
     justify-content: center;
     font-weight: 900;
     font-size: 18px;
@@ -151,26 +152,41 @@ footer{
     }
 
     /* Add line break after this element */
-    header div h1 span::before {
+    header div h1 #RPS::before,
+    #points .Robot-points #alien-txt-wins span::before,
+    #points .robots-playing #winner span::before,
+    #points .Your-points #human-txt-wins span::before{
         content: "\A";
         white-space: pre;
       }
 
-      .Robot-points, .Your-points{
+
+      .Robot-points, .Your-points, .robots-playing{
         display: block;
         padding: 1px;
-        align-items: center;
+        align-items:justify;
   
     }
 
     }
 
-   /* @media screen and (max-width: 960px) {
+   @media screen and (max-width: 899px) {
    
-    #robot-wins, #robot-loses{
-   
+    header{
+        height: 105px;
     }
-    } */
+
+    header div h1 #lets::before,
+    .wld::before{
+        content: "\A";
+        white-space: pre;
+      }
+
+      .playerButtons{
+        flex-direction: column;
+   }
+
+    }
 
    
   
