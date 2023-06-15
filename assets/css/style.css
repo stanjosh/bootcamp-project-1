@@ -66,6 +66,7 @@ header{
 }
 #historicRobots, #mainImage{
     border: 2px solid var(--header_back_color);
+    border-radius: 5px;
 }
 
 .main {
