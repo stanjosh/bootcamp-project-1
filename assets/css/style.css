@@ -50,6 +50,7 @@ header{
     font-size: 18px;
 }
 
+
 #game{
     display: flex;
     padding: 20px;
@@ -58,7 +59,7 @@ header{
     justify-content:space-between;
 }
 
-.robots-history, .rock-paper-scissors{
+.robots, .rock-paper-scissors{
     width: 45%;
     align-items: center;
     height: 300px;
@@ -88,10 +89,25 @@ header{
 
 #mainImage{
     height: 200px;
+    justify-content: center;
+    width: 100%;
+}
+.playerButtons{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+     width: 100%;
+}
+
+#robot-wins, #robot-loses{
+    padding-right: 20px;
 }
 
 #robot-player{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 footer{
@@ -109,3 +125,52 @@ footer{
     justify-content:left;
 }
 
+
+@media screen and (max-width: 1195px) {
+ 
+    #game {
+        display: block;
+    }
+
+    .robots, .rock-paper-scissors{
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+   }
+
+   @media screen and (max-width: 1046px) {
+   
+    #robot-wins, #robot-loses{
+        padding-right: 1px;
+    }
+
+    header{
+        height: 75px;
+    }
+
+    /* Add line break after this element */
+    header div h1 span::before {
+        content: "\A";
+        white-space: pre;
+      }
+
+      .Robot-points, .Your-points{
+        display: block;
+        padding: 1px;
+        align-items: center;
+  
+    }
+
+    }
+
+   /* @media screen and (max-width: 960px) {
+   
+    #robot-wins, #robot-loses{
+   
+    }
+    } */
+
+   
+  

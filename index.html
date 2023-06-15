@@ -46,41 +46,45 @@
         <div class="select">
           <select id="historicRobots"></select>
         </div>
-        <div class="container playing endMatch is-light">
-
-          <p id="matchResult" class="playing hidden"></p>
-          <p id="matchStats" class="playing hidden"></p>
-          <p id="endMatchText" class="endMatch hidden"></p>
-        </div>
-
       </div>
+
       <div class="rock-paper-scissors">
         <div id="robot-player">
-        <p id="cpuNameRecord" class="playing hidden endMatch"></p>&nbsp
-        <p id="matchInfo" class="playing"></p>
-       </div>
+          <p id="cpuNameRecord" class="playing hidden endMatch"></p>&nbsp
+          <p id="matchInfo" class="playing"></p>
+        </div>
+
         <div>
           <img id="mainImage" />
         </div>
-        <div id="playerButtons">
 
-          <button class="button is-dark playing hidden" id="rockButton" data-move="rock">
+        <div class="hidden playerButtons">
+
+          <button id="rockButton" class="button is-dark playing hidden " data-move="rock">
             rock
           </button>
-          <button class="button is-dark playing hidden" id="paperButton" data-move="paper">
+          <button id="paperButton" class="button is-dark playing hidden " data-move="paper">
             paper
           </button>
-          <button class="button is-dark playing hidden" id="scissorsButton" data-move="scissors">
+          <button id="scissorsButton" class="button is-dark playing hidden" data-move="scissors">
             scissors
           </button>
           <button id="rematchButton" class="button is-dark w-100 endMatch hidden">
             Rematch
           </button>
-          <button class="button is-dark w-100 endMatch hidden" id="startButton">
+          <button id="startButton" class="button is-dark w-100 endMatch hidden">
             Find a match
           </button>
-          <p class="playing hidden endMatch"> Wins: <span id="robot-wins"></span>&nbsp&nbsp&nbspLosses: <span id="robot-loses"></span>&nbsp&nbsp&nbspDraws: <span id="robot-draws"></span></p>
-        </div>
+
+          <div class=" wld playing endMatch hidden ">
+            <p> Wins: <span id="robot-wins"> </span>
+              Losses: <span id="robot-loses"> </span>
+              Draws: <span id="robot-draws"> </span>
+            </p>
+          </div>
+
+        </div> 
+      </div>
     </section>
   </main>
 

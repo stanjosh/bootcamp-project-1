@@ -44,12 +44,6 @@ function drawHistoricRobots() {
   for (var i in robotStorage) {
     let robot =
       `<option class="button is-justify-content-space-between w-100"` +
-
-      `data-robot="${robotStorage[i].nameString}">` +
-      `${robotStorage[i].nameString}` +
-      ` W: ${robotStorage[i].wins}` +
-      ` L: ${robotStorage[i].losses}` +
-      ` D: ${robotStorage[i].draws} </option>`;
       `data-robot="${robotStorage[i].nameString}">` +
       `${robotStorage[i].nameString}` +
       // ` W: ${robotStorage[i].wins}` +
