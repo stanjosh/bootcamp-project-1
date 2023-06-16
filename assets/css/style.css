@@ -51,7 +51,6 @@ header{
     font-weight: 900;
 }
 
-
 #game{
     display: flex;
     margin: var(--margin_size);
@@ -60,13 +59,14 @@ header{
 }
 
 .robots, .rock-paper-scissors{
-    width: 45%;
+    min-width: 300px;
     align-items: center;
-    height: 300px;
+
 }
 #historicRobots, #mainImage{
     border: 2px solid var(--header_back_color);
     border-radius: 5px;
+
 }
 
 .main {
@@ -91,9 +91,9 @@ header{
 }
 
 #mainImage{
-    height: 200px;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
+
 }
 .playerButtons{
      display: flex;

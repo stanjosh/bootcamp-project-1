@@ -30,7 +30,6 @@ class RobotOpp {
     new Image().src = this.image; //preload the image
     this.wins = 0;
     this.losses = 0;
-    this.draws = 0;
     robotStorage[this.nameString] = this;
     return this;
   }
@@ -41,7 +40,7 @@ function drawHistoricRobots() {
     var matchmakingEl = `<option` 
     +` class="button is-justify-content-space-between w-100"`
     +` data-robot="matchmaking"`
-    +`>Previous Opponents</option>`
+    +`>Random Opponent</option>`
   $("#historicRobots").append(matchmakingEl);
   for (var i in robotStorage) {
     let robot =
@@ -50,7 +49,7 @@ function drawHistoricRobots() {
       `${robotStorage[i].nameString}` +
       ` W: ${robotStorage[i].wins}` +
       ` L: ${robotStorage[i].losses}` +
-      ` D: ${robotStorage[i].draws} </option>`;
+      `</option>`;
       `data-robot="${robotStorage[i].nameString}">` +
       `</option>`;
     $("#historicRobots").append(robot);
@@ -67,13 +66,12 @@ function drawGameState() {
   $(`.${gameState.at(-1)}`).removeClass("hidden"); //then only show the current game state elements, the last one in the gameState array
 
   if (gameState.at(-1) == "playing") {
-    $("#mainImage").attr("src", currentMatch.opp.image);
-    $("#cpuNameRecord").text(currentMatch.opp.nameString);
     $("#robot-wins").text(currentMatch.opp.wins);
     $("#robot-loses").text(currentMatch.opp.losses);
-    $("#robot-draws").text(currentMatch.opp.draws);
+    $("#mainImage").attr("src", currentMatch.opp.image);
+    $("#cpuNameRecord").text(currentMatch.opp.nameString);
     $("#cpuRecord").text(
-      ` W: ${currentMatch.opp.wins} L: ${currentMatch.opp.losses} D: ${currentMatch.opp.draws}`
+      ` W: ${currentMatch.opp.wins} L: ${currentMatch.opp.losses}`
     );
   }
   if (gameState.at(-1) == 'matchmaking') {
@@ -81,10 +79,11 @@ function drawGameState() {
   }
   $("#robotsOnline").text(`You have ${howManyRobots()} robots online to play with `); //show how many opps there might be
   $("#playerRecord").text(
-    `W: ${player.wins} L: ${player.losses} D: ${player.draws}`
+    `W: ${player.wins} L: ${player.losses}`
   );
   if (gameState.at(-1) == 'endMatch') {
-
+    $("#robot-wins").text(currentMatch.opp.wins);
+    $("#robot-loses").text(currentMatch.opp.losses);
     $("#startButton").on("click", findMatch);
     $("#rematchButton").on("click", () => {findMatch(currentMatch.opp.nameString)});
   }
@@ -122,7 +121,7 @@ class GameMatch {
   }
   scoreMatch(matchData) {
     $("#matchInfo").text(` plays ${matchData.ai.name}!`);
-
+    $("#playerMoveDisplay").text(`Player plays ${matchData.user.name}!`);
     $("#winner").text(`${matchData.result}`);
 
     if (matchData.result.includes("lose")) {
@@ -176,6 +175,7 @@ function findMatch(opp = false) {
 
 
 $("#playerButtons").on("click", async (event) => {
+  console.log($(event.target).data("move"))
   settings = await rpsRequest($(event.target).data("move"));
   $.ajax(settings).done(function (response) {
     currentMatch.playMatch(response);
@@ -187,6 +187,7 @@ $("#challengeButton").on("click", () => {
 
   findMatch(newOpp);
 });
+
 
 document.addEventListener('keydown', (event) => {
   var name = event.key;
