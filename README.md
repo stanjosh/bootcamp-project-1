@@ -14,6 +14,7 @@ Localstorage is used to track records.
 The game features a rematch button or you can challenge a new robot.
 The list of robots is randomly selected from the RoboHash API, and the rock paper scissors rounds are from the roboninja rock paper scissors API.
 Suddenly space cadets and fellow galactic travelers merge on a quest to defeat the earthly blahs.
+Styling done with the help of Bulma.
 
 
 
@@ -21,7 +22,7 @@ Suddenly space cadets and fellow galactic travelers merge on a quest to defeat t
 
 
 
-![Alt text](image-1.png)
+![screenshot of app](./assets/images/image-1.png)
 
 
 
@@ -29,7 +30,7 @@ Suddenly space cadets and fellow galactic travelers merge on a quest to defeat t
 
 
 
-![Alt text](image-2.png)
+![screenshot of app](./assets/images/image-2.png)
 
 
 
