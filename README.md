@@ -17,6 +17,9 @@ The list of robots is randomly selected from the RoboHash API, and the rock pape
 [link to gitHub  deployment ](https://stanjosh.github.io/bootcamp-project-1/)
 
 
+![Alt text](image.png)
+
+
 
 
 
