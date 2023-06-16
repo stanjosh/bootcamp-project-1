@@ -14,7 +14,7 @@
 
 <body>
   <!-- HEADER-->
-  <header is-size-5 is-family-sans-serif>
+  <header>
     <div class="header">
       <h1>Humans... you have no chance... <span id="lets">lets play... </span><span id="RPS"> Rock Paper Scissors</span></h1>
     </div>
@@ -45,37 +45,38 @@
 
 
       <div class="rock-paper-scissors">
-        <div id="robot-player">
-          <p class="playing hidden endMatch"><span id="cpuNameRecord" ></span><span id="matchInfo" class="playing"></span></p>
-          
+        <div id="robot-player" class="is-flex is-flex-wrap-wrap">
+          <p class="playing hidden endMatch m-5"><span id="cpuNameRecord" ></span><span id="matchInfo" class="playing"></span></p>
+          <div class="playing endMatch hidden m-5">
+            <span class="wld">Wins: </span><span id="robot-wins" > </span>
+            <span class="wld">Losses: </span><span id="robot-loses"></span>
+          </div>
         </div>
-        <div class=" playing endMatch hidden">
-          <span class="wld">Wins: </span><span id="robot-wins" > </span>
-          <span class="wld">Losses: </span><span id="robot-loses"></span>
-      </div>
-        <div>
+
+        <div class="container is-centered is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+
           <img id="mainImage" class="playing endMatch matchmaking hidden" />
         </div>
-        <p class="playing hidden"><span id="playerMoveDisplay" ></span></p>
+        
         <div class="hidden playerButtons" id="playerButtons">
 
-          <button id="rockButton" class="button is-dark playing hidden " data-move="rock">
+          <button id="rockButton" class="button is-dark playing hidden m-5" data-move="rock">
             rock
           </button>
-          <button id="paperButton" class="button is-dark playing hidden " data-move="paper">
+          <button id="paperButton" class="button is-dark playing hidden m-5" data-move="paper">
             paper
           </button>
-          <button id="scissorsButton" class="button is-dark playing hidden" data-move="scissors">
+          <button id="scissorsButton" class="button is-dark playing hidden m-5" data-move="scissors">
             scissors
           </button>
-          
+          <p class="playing hidden"><span id="playerMoveDisplay" ></span></p>
         </div>
 
         <div>
-          <button id="rematchButton" class="button is-dark w-100 endMatch hidden">
+          <button id="rematchButton" class="button is-dark m-5 endMatch hidden">
             Rematch
           </button>
-          <button id="startButton" class="button is-dark w-100 endMatch hidden">
+          <button id="startButton" class="button is-dark m-5 endMatch hidden">
             Find a match
         </button>
         <span id="playerRecord" class="playing endMatch hidden"></span>
