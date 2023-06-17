@@ -1,40 +1,27 @@
+# Description 
+We set out to fix the real world problem of boredom. This simple rock, papaer, scissors application. It is easily accesible and can be easily played anytime. Suddenly space cadets and fellow galactic travelers merge on a quest to defeat the earthly blahs.
+![Initial page with challange button](assets/images/Screenshot%202023-06-17%20at%2012.27.15%20PM.png)
 
-Title Name:
-# Robotic Moves Brings You Rock Paper Scissors
+# Installation
 
-
-## What can be done to cure boredom?
-Real world problem (boredom) needs an other wordly solution!
-Rock, paper scissors is a great game, but it requires an opponent!
-Send a signal to space and find the latest in interactive three-choice AI!
-
-##Features
-I can challenge the randomly selected robots to a best two out of three games wins match.
-Localstorage is used to track records.
-The game features a rematch button or you can challenge a new robot.
-The list of robots is randomly selected from the RoboHash API, and the rock paper scissors rounds are from the roboninja rock paper scissors API.
-Suddenly space cadets and fellow galactic travelers merge on a quest to defeat the earthly blahs.
-Styling done with the help of Bulma.
+Deployed link: https://stanjosh.github.io/robot-rps/
+GitHub Link: https://github.com/stanjosh/robot-rps
 
 
+# Usage  
+This application generates a robot opponent to play rock paper scissors with. We used the Rapid API Rock, Paper, Scissors to create the game play. The user is presented with the options to play 'rock', 'paper', or 'scissors'. The game plays to best of three. We also used the Robohas API that randomly generates a robot image and name to play as the oponent. These opponents with their win record is stored in local storage to be played again it the user wants. We used Bulma styling elemnts to make the page more responsive on all devices. 
+![Robot opponent with game buttons](assets/images/Screenshot%202023-06-17%20at%2012.26.21%20PM.png)
+![Locoal storage with robots](assets/images/Screenshot%202023-06-17%20at%2012.26.56%20PM.png)
 
 
+# Credits 
+Robothash API: https://robohash.org/
+Rapid API: https://rapidapi.com/codestackr-9h89CFWxq/api/rock-paper-scissors2
+Bulma: https://bulma.io/
+
+Created by, Joshua Stanford, Marialda Cabral, Sean Willis, Maren Christensen
 
 
-
-![screenshot of app](./assets/images/image-1.png)
-
-
-
-
-
-
-
-![screenshot of app](./assets/images/image-2.png)
-
-
-
-[link to gitHub  deployment ](https://stanjosh.github.io/bootcamp-project-1/)
 
 
 
